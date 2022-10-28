@@ -13,6 +13,7 @@
     function getTasks()
     {
         //CODE HERE
+        $sql= "SELECT * FROM "
         //SQL SELECT
         echo "Fetch all tasks";
     }

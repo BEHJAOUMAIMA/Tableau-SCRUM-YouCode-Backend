@@ -337,7 +337,7 @@
 							<input type="hidden" id="task-id">
 							<div class="mb-3">
 								<label class="form-label">Title</label>
-								<input type="text" class="form-control" id="task-title"/>
+								<input type="text" class="form-control" name="title" id="task-title"/>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Type</label>
@@ -355,7 +355,7 @@
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Priority</label>
-								<select class="form-select" id="task-priority">
+								<select class="form-select" name="task-priority" id="task-priority">
 									<option value="">Please select</option>
 									<option value="Low">Low</option>
 									<option value="Medium">Medium</option>
@@ -365,7 +365,7 @@
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Status</label>
-								<select class="form-select" id="task-status">
+								<select class="form-select" name="task-status" id="task-status">
 									<option value="">Please select</option>
 									<option value="To Do">To Do</option>
 									<option value="In Progress">In Progress</option>
@@ -374,11 +374,11 @@
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Date</label>
-								<input type="date" class="form-control" id="task-date"/>
+								<input type="date" class="form-control" name="task-date" id="task-date"/>
 							</div>
 							<div class="mb-0">
 								<label class="form-label">Description</label>
-								<textarea class="form-control" rows="10" id="task-description"></textarea>
+								<textarea class="form-control" rows="10" name="task-description" id="task-description"></textarea>
 							</div>
 						
 					</div>
