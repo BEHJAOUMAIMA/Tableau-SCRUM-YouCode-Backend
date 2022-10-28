@@ -59,7 +59,27 @@
     }
     function saveTask()
     {
+      global $connexion;
         //CODE HERE
+        if(isset($_POST['save'])){
+          $title =  $_POST['title'];
+          $type= $_POST['task-type'];
+          $priority =  $_POST['task-priority'];
+          $status =  $_POST['task-status'];
+          $date = $_POST['task-date'];
+          $description = $_POST['task-description'];
+          $Inser = "INSERT INTO tasks (`id`, `title`, `type_id`,`priority_id`, `status_id`, `task_datetime`, `description`) 
+          VALUES ('','$title', '$type', '$priority', '$status', '$date','$description')";
+
+        }else{
+          // inserting into database
+          $result = mysqli_query($connexion,$Inser);
+          if($result){
+              echo "Data inserted successfully";
+          }else{
+              echo "Data not inserted";
+          }
+        }
         //SQL INSERT
         $_SESSION['message'] = "Task has been added successfully !";
 		header('location: index.php');
