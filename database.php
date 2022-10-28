@@ -1,6 +1,6 @@
 <?php
     $serverName = "Localhost";
-    $userName = "YouCode";
+    $userName = "root";
     $password = "";
     $dataBase ="youcodescrumboard";
     //CONNECT TO MYSQL DATABASE USING MYSQLI
