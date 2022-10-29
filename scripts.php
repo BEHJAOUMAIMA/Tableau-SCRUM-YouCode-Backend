@@ -7,7 +7,7 @@
     //ROUTING
     if(isset($_POST['save']))        saveTask();
     if(isset($_POST['update']))      updateTask();
-    if(isset($_POST['delete']))      deleteTask();
+    if(isset($_POST['delete']))      deleteTask($_POST['delete_id']);
 
     function getTasks($status)
     {
@@ -85,16 +85,21 @@
     function updateTask()
     {
         //CODE HERE
+        
         //SQL UPDATE
         $_SESSION['message'] = "Task has been updated successfully !";
 		header('location: index.php');
     }
 
-    function deleteTask() 
+    function deleteTask($id) 
     {
-        //CODE HERE
-
-        //SQL DELETE
-        $_SESSION['message'] = "Task has been deleted successfully !";
-		header('location: index.php');
+      global $connexion;
+      //CODE HERE
+      if(isset($_POST['delete'])){
+        // request: 
+        $delete="DELETE FROM `tasks` WHERE id = $id";   
+      }
+      //SQL DELETE
+      $_SESSION['message'] = "Task has been deleted successfully !";
+		  header('location: index.php');
     }

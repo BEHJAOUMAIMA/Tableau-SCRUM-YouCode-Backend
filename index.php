@@ -389,7 +389,7 @@ include('scripts.php');
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-						<button type="submit" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn">Delete</a>
+							<button type="submit" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn">Delete</a>
 							<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</a>
 							<button type="submit" name="save" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
 					</div>
