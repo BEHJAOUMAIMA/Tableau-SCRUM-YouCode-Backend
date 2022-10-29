@@ -348,11 +348,11 @@ include('scripts.php');
 							<label class="form-label">Type</label>
 							<div class="ms-3">
 								<div class="form-check mb-1">
-									<input class="form-check-input" name="task-type" type="radio" value="Feature" id="task-type-feature" />
+									<input class="form-check-input" name="task-type" type="radio" value="1" id="task-type-feature" />
 									<label class="form-check-label" for="task-type-feature">Feature</label>
 								</div>
 								<div class="form-check">
-									<input class="form-check-input" name="task-type" type="radio" value="Bug" id="task-type-bug" />
+									<input class="form-check-input" name="task-type" type="radio" value="2" id="task-type-bug" />
 									<label class="form-check-label" for="task-type-bug">Bug</label>
 								</div>
 							</div>
@@ -362,19 +362,19 @@ include('scripts.php');
 							<label class="form-label">Priority</label>
 							<select class="form-select" name="task-priority" id="task-priority">
 								<option value="">Please select</option>
-								<option value="Low">Low</option>
-								<option value="Medium">Medium</option>
-								<option value="High">High</option>
-								<option value="Critical">Critical</option>
+								<option value="1">Low</option>
+								<option value="2">Medium</option>
+								<option value="3">High</option>
+								<option value="4">Critical</option>
 							</select>
 						</div>
 						<div class="mb-3">
 							<label class="form-label">Status</label>
 							<select class="form-select" name="task-status" id="task-status">
 								<option value="">Please select</option>
-								<option value="To Do">To Do</option>
-								<option value="In Progress">In Progress</option>
-								<option value="Done">Done</option>
+								<option value="1">To Do</option>
+								<option value="2">In Progress</option>
+								<option value="3">Done</option>
 							</select>
 						</div>
 						<div class="mb-3">
@@ -391,7 +391,7 @@ include('scripts.php');
 						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
 						<button type="submit" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn">Delete</a>
 							<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</a>
-								<button type="submit" name="save" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
+							<button type="submit" name="save" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
 					</div>
 				</form>
 			</div>

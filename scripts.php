@@ -68,21 +68,18 @@
           $status =  $_POST['task-status'];
           $date = $_POST['task-date'];
           $description = $_POST['task-description'];
-          $Inser = "INSERT INTO tasks (`id`, `title`, `type_id`,`priority_id`, `status_id`, `task_datetime`, `description`) 
-          VALUES ('','$title', '$type', '$priority', '$status', '$date','$description')";
-
-        }else{
-          // inserting into database
-          $result = mysqli_query($connexion,$Inser);
-          if($result){
-              echo "Data inserted successfully";
-          }else{
-              echo "Data not inserted";
+          echo $title . $type . $priority . $status . $date;
+          $ajout = "INSERT INTO `tasks`(`id`, `title`, `type_id`, `priority_id`, `status_id`, `task_datetime`, `description`) VALUES ('','$title','$type','$priority','$status','$date','$description')";
+          // mysqli_query($connexion, $ajout);
+          if (mysqli_query($connexion, $ajout)) {
+            echo "New record created successfully";
+          } else {
+            echo "Error: " . $ajout . "<br>" . mysqli_error($connexion);
           }
         }
         //SQL INSERT
         $_SESSION['message'] = "Task has been added successfully !";
-		header('location: index.php');
+		    header('location: index.php');
     }
 
     function updateTask()
@@ -96,6 +93,7 @@
     function deleteTask() 
     {
         //CODE HERE
+
         //SQL DELETE
         $_SESSION['message'] = "Task has been deleted successfully !";
 		header('location: index.php');
