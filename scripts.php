@@ -85,20 +85,20 @@
     function updateTask()
     {
         //CODE HERE
-        
+
         //SQL UPDATE
         $_SESSION['message'] = "Task has been updated successfully !";
 		header('location: index.php');
     }
 
-    function deleteTask($id) 
+    function deleteTask() 
     {
       global $connexion;
       //CODE HERE
-      if(isset($_POST['delete'])){
+       $id = $_POST["id"];
         // request: 
         $delete="DELETE FROM `tasks` WHERE id = $id";   
-      }
+    
       //SQL DELETE
       $_SESSION['message'] = "Task has been deleted successfully !";
 		  header('location: index.php');

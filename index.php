@@ -339,7 +339,7 @@ include('scripts.php');
 					</div>
 					<div class="modal-body">
 						<!-- This Input Allows Storing Task Index  -->
-						<input type="hidden" id="task-id">
+						<input type="hidden" name="id" id="task-id">
 						<div class="mb-3">
 							<label class="form-label">Title</label>
 							<input type="text" class="form-control" name="title" id="task-title" />
