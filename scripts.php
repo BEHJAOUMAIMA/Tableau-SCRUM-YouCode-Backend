@@ -3,12 +3,17 @@
     include('database.php');
     //SESSSION IS A WAY TO STORE DATA TO BE USED ACROSS MULTIPLE PAGES
     session_start();
-
     //ROUTING
     if(isset($_POST['save']))        saveTask();
     if(isset($_POST['update']))      updateTask();
-    if(isset($_POST['delete']))      deleteTask($_POST['delete_id']);
+    if(isset($_POST['delete']))      deleteTask();
 
+    function countTask($status){
+      global $connexion;
+      $sql = "SELECT * FROM `tasks` WHERE status_id = $status";
+      $result = mysqli_query($connexion, $sql);
+      echo mysqli_num_rows($result);
+    }
     function getTasks($status)
     {
         global $connexion;
@@ -32,7 +37,9 @@
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
                 // echo "id: " . $row["task-id"]. "title" . $row["title"]. "type_id" . $row["task-type"]. "priority_id" . $row["task-priority"]. "status_id" . $row["task-status"]. "task_datetime" . $row["task-date"]. "description" . $row["ttask-description"]."<br>";
-                echo '<button class="w-100 py-3 border-0 d-flex bg-gray-200 border-bottom" href="#modal-task" data-bs-toggle="modal">
+                echo '<button class="w-100 py-3 border-0 d-flex bg-gray-200 border-bottom" 
+                id="'.$row["id"].'" title="'.$row["title"].'" status="'.$row["status_id"].'" 
+                type="'.$row["type_id"].'" priority="'.$row["priority_id"].'" date="'.$row["task_datetime"].'" description="'.$row["description"].'" href="#modal-task" data-bs-toggle="modal" onclick="editTask('.$row["id"].')">
                 <div class="col-1 mt-1">
                   <i class="'.$icone.' h4 text-purple"></i>
               </div>
@@ -53,9 +60,7 @@
               </div>
             </button>';
             }
-          } else {
-            echo "0 results";
-          }
+          } 
     }
     function saveTask()
     {
@@ -84,8 +89,22 @@
 
     function updateTask()
     {
+      global $connexion;
         //CODE HERE
-
+        $id = $_POST["id"];
+        $title =  $_POST['title'];
+        $type= $_POST['task-type'];
+        $priority =  $_POST['task-priority'];
+        $status =  $_POST['task-status'];
+        $date = $_POST['task-date'];
+        $description = $_POST['task-description'];
+        $update= "UPDATE `tasks` SET `id`='$id',`title`='$title',`type_id`=' $type',
+        `priority_id`='$priority',`status_id`='$status',`task_datetime`='$date',`description`='$description' WHERE id=$id";
+        if (mysqli_query($connexion, $update)) {
+          echo "Record updated successfully";
+        } else {
+          echo "Error updating record: " . mysqli_error($connexion);
+        }
         //SQL UPDATE
         $_SESSION['message'] = "Task has been updated successfully !";
 		header('location: index.php');
@@ -97,7 +116,13 @@
       //CODE HERE
        $id = $_POST["id"];
         // request: 
-        $delete="DELETE FROM `tasks` WHERE id = $id";   
+        $supprimer="DELETE FROM `tasks` WHERE id=$id";   
+        if (mysqli_query($connexion, $supprimer)) {
+          echo "Record deleted successfully";
+        } else {
+          echo "Error deleting record: " . mysqli_error($connexion);
+        }
+       
     
       //SQL DELETE
       $_SESSION['message'] = "Task has been deleted successfully !";

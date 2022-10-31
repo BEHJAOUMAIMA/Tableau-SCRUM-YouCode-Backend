@@ -223,7 +223,7 @@ include('scripts.php');
 				</div>
 
 				<div class="ms-auto">
-					<a href="#modal-task" data-bs-toggle="modal" class="btn btn-success btn-rounded px-4 rounded-pill"><i class="fa fa-plus fa-lg me-2 ms-n2 text-success-900"></i> Add Task</a>
+					<a onclick="addTask()" href="#modal-task" data-bs-toggle="modal" class="btn btn-success btn-rounded px-4 rounded-pill"><i class="fa fa-plus fa-lg me-2 ms-n2 text-success-900"></i> Add Task</a>
 				</div>
 			</div>
 
@@ -257,7 +257,7 @@ include('scripts.php');
 				<div class="col-xl-4 col-lg-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">To do (<span id="to-do-tasks-count">0</span>)</h4>
+							<h4 class="panel-title">To do (<span id="to-do-tasks-count"><?php countTask(1); ?></span>)</h4>
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -278,7 +278,7 @@ include('scripts.php');
 				<div class="col-xl-4 col-lg-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">In Progress (<span id="in-progress-tasks-count">0</span>)</h4>
+							<h4 class="panel-title">In Progress (<span id="in-progress-tasks-count"><?php countTask(2); ?></span>)</h4>
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -299,7 +299,7 @@ include('scripts.php');
 				<div class="col-xl-4 col-lg-6">
 					<div class="panel panel-inverse">
 						<div class="panel-heading">
-							<h4 class="panel-title">Done (<span id="done-tasks-count">0</span>)</h4>
+							<h4 class="panel-title">Done (<span id="done-tasks-count"><?php countTask(3); ?></span>)</h4>
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
@@ -379,7 +379,7 @@ include('scripts.php');
 						</div>
 						<div class="mb-3">
 							<label class="form-label">Date</label>
-							<input type="date" class="form-control" name="task-date" id="task-date" />
+							<input type="datetime-local" class="form-control" name="task-date" id="task-date" />
 						</div>
 						<div class="mb-0">
 							<label class="form-label">Description</label>
@@ -402,7 +402,7 @@ include('scripts.php');
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/app.min.js"></script>
 	<!-- ================== END core-js ================== -->
-	<script src="scripts.js"></script>
+	<script src="scriptss.js"></script>
 
 	<script>
 		//reloadTasks();
