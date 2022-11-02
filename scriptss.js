@@ -22,3 +22,5 @@ function addTask(){
     document.getElementById("form-task").reset();
 
 }
+// Form validation code 
+

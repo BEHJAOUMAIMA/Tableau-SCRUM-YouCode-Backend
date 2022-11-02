@@ -117,7 +117,7 @@ include('scripts.php');
 					<a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
 						<img src="assets/img/user/user-13.jpg" alt="" />
 						<span>
-							<span class="d-none d-md-inline">Jilali Smith</span>
+							<span class="d-none d-md-inline">Oumaima BEHJA</span>
 							<b class="caret"></b>
 						</span>
 					</a>
@@ -153,7 +153,7 @@ include('scripts.php');
 							<div class="menu-profile-info">
 								<div class="d-flex align-items-center">
 									<div class="flex-grow-1">
-										Jilali Smith
+										Oumaima BEHJA
 									</div>
 									<div class="menu-caret ms-auto"></div>
 								</div>
@@ -332,7 +332,7 @@ include('scripts.php');
 	<div class="modal fade" id="modal-task">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="scripts.php" method="POST" id="form-task">
+				<form action="scripts.php" method="POST" name="myForm" id="form-task">
 					<div class="modal-header">
 						<h5 class="modal-title">Add Task</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -389,9 +389,9 @@ include('scripts.php');
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-							<button type="submit" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn">Delete</a>
+						<button type="submit" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn">Delete</a>
 							<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</a>
-							<button type="submit" name="save" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
+								<button type="submit" name="save" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
 					</div>
 				</form>
 			</div>

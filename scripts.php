@@ -79,6 +79,10 @@ function saveTask(){
     //SQL INSERT
     $_SESSION['message'] = "Task has been added successfully !";
 		header('location: index.php');
+    // if(empty($_POST['title']) || empty($_POST['task-type']) || empty($_POST['task-priority']) || empty($_POST['task-date']) ){
+    //   $_SESSION['message'] = "Please fill in the fields !! ";
+    // // header('location: index.php');
+    // }
 }
 
 function updateTask(){
