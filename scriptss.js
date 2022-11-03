@@ -15,6 +15,7 @@ function editTask(id) {
         document.getElementById("task-type-bug").checked = true;
     }
 }
+
 function addTask(){
     document.getElementById("task-save-btn").style.display = 'block';
     document.getElementById("task-delete-btn").style.display = 'none';

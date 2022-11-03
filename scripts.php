@@ -7,13 +7,15 @@
   if(isset($_POST['save']))        saveTask();
   if(isset($_POST['update']))      updateTask();
   if(isset($_POST['delete']))      deleteTask();
-  function countTask($status){
+
+function countTask($status){
       global $connexion;
       $sql = "SELECT * FROM `tasks` WHERE status_id = $status";
       $result = mysqli_query($connexion, $sql);
       echo mysqli_num_rows($result);
-  }
-  function getTasks($status){
+}
+
+function getTasks($status){
     global $connexion;
       //CODE HERE
     $sql= "SELECT tasks.*,priorities.name AS 'NamePriorities',types.name AS 'NameTypes',statuses.name AS 'NameStatuses'
@@ -57,25 +59,23 @@
             }
           } 
     }
-function saveTask(){
+
+
+    function saveTask(){
   global $connexion;
     //CODE HERE
-  if(isset($_POST['save'])){
+  // if(isset($_POST['save'])){
     $title =  $_POST['title'];
     $type= $_POST['task-type'];
     $priority =  $_POST['task-priority'];
     $status =  $_POST['task-status'];
     $date = $_POST['task-date'];
     $description = $_POST['task-description'];
-    echo $title . $type . $priority . $status . $date;
+    
     $ajout = "INSERT INTO `tasks`(`id`, `title`, `type_id`, `priority_id`, `status_id`, `task_datetime`, `description`) VALUES ('','$title','$type','$priority','$status','$date','$description')";
-       // mysqli_query($connexion, $ajout);
-    if (mysqli_query($connexion, $ajout)) {
-      echo "New record created successfully";
-    } else {
-       echo "Error: " . $ajout . "<br>" . mysqli_error($connexion);
-    }
-  }
+    mysqli_query($connexion, $ajout);
+
+  // }
     //SQL INSERT
     $_SESSION['message'] = "Task has been added successfully !";
 		header('location: index.php');
